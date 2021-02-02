@@ -104,7 +104,7 @@
         app:layout_constraintVertical_bias="0.042" />
 
     <TextView
-        android:id="@+id/sidebaset5"
+        android:id="@+id/sideaset5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/box"
@@ -218,17 +218,17 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/teamAScore"
+            android:id="@+id/sideAScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
             android:textSize="50sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/teamA_btn_add1"
+            android:id="@+id/addpointsidea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="AAdd1"
+            android:onClick="AAddPoint"
             android:text="POINT SCORED" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -251,7 +251,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/teamBScore"
+            android:id="@+id/sideBScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -259,22 +259,35 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/teamB_btn_add1"
+            android:id="@+id/addpointsideb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="BAdd1"
+            android:onClick="BAddPoint"
             android:text="POINT SCORED" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/teamB_btn_add1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="ResetScore"
-        android:text="Reset Score"
+        android:id="@+id/resetpoint"
+        android:layout_width="144dp"
+        android:layout_height="47dp"
+        android:onClick="ResetPoint"
+        android:text="Reset Point"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resetpoint"
+        android:layout_width="141dp"
+        android:layout_height="48dp"
+        android:onClick="ResetSet"
+        android:text="Reset Set"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.527" />
