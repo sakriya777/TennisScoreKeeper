@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public static int SideAPoints = 0;
     public static int SideBPoints = 0;
 
-    public static int SideAAdvantage = 0;
-    public static int SideBAdvantage = 0;
+    public static String SideAAdvantage = "";
+    public static String SideBAdvantage = "";
 
     public static int CurrentSet = 1;
 
@@ -80,32 +80,39 @@ public class MainActivity extends AppCompatActivity {
             SideAPointText.setText(Integer.toString(SideAPoints));
         }
         else if(SideAPoints == 40 && SideBPoints < 40){
-            SideAAdvantage = 0;
-            SideBAdvantage = 0;
+            SideAAdvantage = "";
+            SideBAdvantage = "";
+
+            SideAPoints = 0;
+            SideBPoints = 0;
+
+            SideAPointText.setText("0");
+            SideBPointText.setText("0");
+
+            ControlSetA(view);
+        }
+        else if(SideAPoints == 40 && SideBPoints == 40){
+            SideAAdvantage = "AD";
+            SideBAdvantage = "";
+            SideAPoints = 50;
+            SideBPoints = 50;
+            SideAPointText.setText(SideAAdvantage);
+            SideBPointText.setText(SideBAdvantage);
+        }
+        else if(SideBAdvantage == "AD" && SideAPoints == 50 && SideBPoints == 50){
+            SideAAdvantage = "AD";
+            SideBAdvantage = "";
+            SideAPointText.setText(SideAAdvantage);
+            SideBPointText.setText(SideBAdvantage);
+        }
+        else if(SideAAdvantage == "AD" && SideAPoints == 50 && SideBPoints == 50){
+            SideAAdvantage = "";
+            SideBAdvantage = "";
             SideAPoints = 0;
             SideBPoints = 0;
             SideAPointText.setText("0");
             SideBPointText.setText("0");
-            SideASet1 = SideASet1 + 1;
-            if(CurrentSet == 1){
-                SideASet1Text.setText(Integer.toString(SideASet1));
-            }
-        }
-        else if(SideAPoints == 40 && SideBPoints == 40){
-            SideAAdvantage = 1;
-            SideBAdvantage = 0;
-            SideAPointText.setText("AD");
-            SideBPointText.setText("");
-        }
-        else if(SideBAdvantage == 1){
-            SideAPointText.setText("AD");
-            SideBPointText.setText("");
-        }
-        else if(SideAAdvantage == 1){
-            SideAAdvantage = 0;
-            SideBAdvantage = 0;
-            SideAPoints = 0;
-            SideBPoints = 0;
+            ControlSetA(view);
         }
     }
     public void BAddPoint(View view){
@@ -122,26 +129,113 @@ public class MainActivity extends AppCompatActivity {
             SideBPointText.setText(Integer.toString(SideBPoints));
         }
         else if(SideBPoints == 40 && SideAPoints < 40){
-            SideBAdvantage = 0;
-            SideAAdvantage = 0;
+            SideAAdvantage = "";
+            SideBAdvantage = "";
+
+            SideAPoints = 0;
+            SideBPoints = 0;
+
+            SideAPointText.setText("0");
+            SideBPointText.setText("0");
+
+            ControlSetB(view);
+        }
+        else if(SideAPoints == 40 && SideBPoints == 40){
+            SideAAdvantage = "";
+            SideBAdvantage = "AD";
+            SideAPoints = 50;
+            SideBPoints = 50;
+            SideBPointText.setText(SideBAdvantage);
+            SideAPointText.setText(SideAAdvantage);
+        }
+        else if(SideAAdvantage == "AD"  && SideAPoints == 50 && SideBPoints == 50){
+            SideAAdvantage = "";
+            SideBAdvantage = "AD";
+            SideBPointText.setText(SideBAdvantage);
+            SideAPointText.setText(SideAAdvantage);
+        }
+        else if(SideBAdvantage == "AD" && SideAPoints == 50 && SideBPoints == 50){
+            SideAAdvantage = "";
+            SideBAdvantage = "";
             SideAPoints = 0;
             SideBPoints = 0;
             SideAPointText.setText("0");
             SideBPointText.setText("0");
-            SideBSet1 = SideBSet1 + 1;
-            if(CurrentSet == 1){
-                SideBSet1Text.setText(Integer.toString(SideBSet1));
-            }
+            ControlSetB(view);
         }
-        else if(SideAPoints == 40 && SideBPoints == 40){
-            SideBAdvantage = 1;
-            SideAAdvantage = 0;
-            SideBPointText.setText("AD");
-            SideAPointText.setText("");
+    }
+    public void ControlSetA(View view){
+        if(CurrentSet == 1 && (SideASet1>=6 || SideBSet1>=6) && (SideASet1-SideBSet1>=2 || SideBSet1-SideASet1>=2)){
+            CurrentSet++;
         }
-        else if(SideAAdvantage == 1){
-            SideBPointText.setText("AD");
-            SideAPointText.setText("");
+        if(CurrentSet == 2 && (SideASet2>=6 || SideBSet2>=6) && (SideASet2-SideBSet2>=2 || SideBSet2-SideASet2>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 3 && (SideASet3>=6 || SideBSet3>=6) && (SideASet3-SideBSet3>=2 || SideBSet3-SideASet3>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 4 && (SideASet4>=6 || SideBSet4>=6) && (SideASet4-SideBSet4>=2 || SideBSet4-SideASet4>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 5 && (SideASet5>=6 || SideBSet5>=6) && (SideASet5-SideBSet5>=2 || SideBSet5-SideASet5>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 1){
+            SideASet1++;
+            SideASet1Text.setText(Integer.toString(SideASet1));
+        }
+        else if(CurrentSet == 2){
+            SideASet2++;
+            SideASet2Text.setText(Integer.toString(SideASet2));
+        }
+        else if(CurrentSet == 3){
+            SideASet3++;
+            SideASet3Text.setText(Integer.toString(SideASet3));
+        }
+        else if(CurrentSet == 4){
+            SideASet4++;
+            SideASet4Text.setText(Integer.toString(SideASet4));
+        }
+        else if(CurrentSet == 5){
+            SideASet5++;
+            SideASet5Text.setText(Integer.toString(SideASet5));
+        }
+    }
+    public void ControlSetB(View view){
+        if(CurrentSet == 1 && (SideASet1>=6 || SideBSet1>=6) && (SideASet1-SideBSet1>=2 || SideBSet1-SideASet1>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 2 && (SideASet2>=6 || SideBSet2>=6) && (SideASet2-SideBSet2>=2 || SideBSet2-SideASet2>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 3 && (SideASet3>=6 || SideBSet3>=6) && (SideASet3-SideBSet3>=2 || SideBSet3-SideASet3>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 4 && (SideASet4>=6 || SideBSet4>=6) && (SideASet4-SideBSet4>=2 || SideBSet4-SideASet4>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 5 && (SideASet5>=6 || SideBSet5>=6) && (SideASet5-SideBSet5>=2 || SideBSet5-SideASet5>=2)){
+            CurrentSet++;
+        }
+        if(CurrentSet == 1){
+            SideBSet1++;
+            SideBSet1Text.setText(Integer.toString(SideBSet1));
+        }
+        else if(CurrentSet == 2){
+            SideBSet2++;
+            SideBSet2Text.setText(Integer.toString(SideBSet2));
+        }
+        else if(CurrentSet == 3){
+            SideBSet3++;
+            SideBSet3Text.setText(Integer.toString(SideBSet3));
+        }
+        else if(CurrentSet == 4){
+            SideBSet4++;
+            SideBSet4Text.setText(Integer.toString(SideBSet4));
+        }
+        else if(CurrentSet == 5){
+            SideBSet5++;
+            SideBSet5Text.setText(Integer.toString(SideBSet5));
         }
     }
     public void ResetPoint(View view){

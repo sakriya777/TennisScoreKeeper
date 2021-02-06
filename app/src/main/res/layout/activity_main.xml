@@ -10,8 +10,22 @@
     android:layout_marginTop="55dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="312dp"
+        android:layout_height="115dp"
+        android:background="@drawable/backbox"
+        android:padding="10px"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <TextView
+        android:layout_width="82dp"
+        android:layout_height="40dp"
         android:background="@drawable/box"
         android:padding="10px"
         android:text="SIDE A"
@@ -19,10 +33,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -269,27 +283,27 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resetpoint"
         android:layout_width="144dp"
-        android:layout_height="47dp"
+        android:layout_height="43dp"
         android:onClick="ResetPoint"
         android:text="Reset Point"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.529" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resetpoint"
-        android:layout_width="141dp"
-        android:layout_height="48dp"
+        android:layout_width="137dp"
+        android:layout_height="43dp"
         android:onClick="ResetSet"
         android:text="Reset Set"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintVertical_bias="0.531" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
